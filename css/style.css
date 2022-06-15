@@ -91,7 +91,7 @@ body.template-dark {
 /* HEADER */
 
 .header {
-    position: fixed;
+    position: absolute;
     top: 0;
     width: 100%;
     background-color: rgba(0, 0, 0, .5);
@@ -132,11 +132,14 @@ body.template-dark {
     cursor: pointer;
 }
 
+
 .nav-list {
-    display: none;
+    /* display: none; */
+    position: absolute;
     align-items: center;
     justify-content: center;
     gap: 3rem;
+    
 }
 
 .nav-link {
