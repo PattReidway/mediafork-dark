@@ -91,7 +91,7 @@ body.template-dark {
 /* HEADER */
 
 .header {
-    position: absolute;
+    position: fixed;
     top: 0;
     width: 100%;
     background-color: rgba(0, 0, 0, .5);
@@ -135,11 +135,7 @@ body.template-dark {
 
 .nav-list {
     /* display: none; */
-    position: absolute;
-    align-items: center;
-    justify-content: center;
-    gap: 3rem;
-    
+   
 }
 
 .nav-link {
@@ -169,6 +165,27 @@ body.template-dark {
 .nav-link.active {
     color: var(--transparent-white);
 }
+@media screen and (max-width:768px) {
+    body.active{
+        overflow: hidden;
+    }
+    .nav-list{
+        position: absolute; 
+        top:6rem;
+        width:100vw;
+        height:100vh;
+        left: 0;
+        background-color: rgba(0, 0, 0, .5);
+    }
+    
+    .nav-item {
+        background-color: rgba(0, 0, 0, .5);
+        border-bottom: 1px solid var(--transparent-white);
+        padding: 1rem 2rem;
+        font-size: 3rem;
+        text-align: center;
+    }
+    }
 
 @media screen and (min-width: 768px) {
     .nav-burger {
