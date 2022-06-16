@@ -176,9 +176,16 @@ body.template-dark {
         height:100vh;
         left: 0;
         background-color: rgba(0, 0, 0, .5);
+        text-align: center;
+        transition: 2s;
     }
+    .transition{
+        
+    }
+
     .nav-list.active{
-        display:block
+        display:flex;
+        flex-direction: column;
         
     }
     
@@ -188,6 +195,7 @@ body.template-dark {
         padding: 1rem 2rem;
         font-size: 3rem;
         text-align: center;
+        transition: 2s;
     }
     }
 
