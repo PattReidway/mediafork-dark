@@ -1,15 +1,34 @@
+const mobileButton = document.getElementById("mobile-button");
+const mainNav = document.getElementById("main-nav");
+const mobileIcon = document.getElementById("mobile-icon");
 
-const burgerButton = document.querySelector("nav .nav-burger");
-const faBars = document.querySelector(".fa-bars")
-burgerButton.addEventListener("click" ,function(event){
-   
-    document.querySelector("nav .nav-list").classList.toggle("active")
-    document.querySelector(".fa-bars").classList.toggle("fa-angle-up");
+function toggleBurger() {
+    if (mobileIcon.classList.contains("fa-bars")) {
+        mobileIcon.classList.replace("fa-bars", "fa-chevron-up");
+    } else {
+        mobileIcon.classList.replace("fa-chevron-up", "fa-bars");
+    }
+}
 
+function toggleNav(event) {
+    if (window.innerWidth >= 768) return;
+    mainNav.classList.toggle("display");
+    document.body.classList.toggle("overflow");
+    toggleBurger();
+}
 
-       if(faBars.classList.contains("fa-angle-up")){
-        document.documentElement.style.overflow = 'hidden';
-   }else{
-    document.documentElement.style.overflow = 'scroll';
-   }
+function resetNav() {
+    mainNav.classList.remove("display");
+    document.body.classList.remove("overflow");
+    mobileIcon.classList.replace("fa-chevron-up", "fa-bars");
+}
+
+mobileButton.addEventListener("click", toggleNav);
+
+mainNav.addEventListener("click", function(event) {
+    if (event.target.hasAttribute("href")) toggleNav();
+})
+
+window.addEventListener("resize", function(event) {
+    if (window.innerWidth >= 768) resetNav();
 })
